@@ -168,8 +168,8 @@
             box-shadow: 0 0 25px #0fffc1, 0 0 60px #00ffbf;
         }
 
-        /* --- Host Cards --- */
-        .host-card {
+        /* --- Host Cards (and Changelog Cards) --- */
+        .host-card, .changelog-entry {
             background: #0a1a1a;
             padding: 30px;
             border-radius: 15px;
@@ -217,6 +217,39 @@
             background: #0fffc1;
             color: #031616;
             box-shadow: 0 0 20px #0fffc1, 0 0 40px #00ffbf;
+        }
+
+        /* --- Changelog Specific Styles --- */
+        .changelog-entry {
+            border: 2px solid #0fffc1; /* More pronounced border for updates */
+            margin-bottom: 40px;
+        }
+        .changelog-entry h3 {
+            font-size: 2rem;
+            color: #0fffc1;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px #0fffc1;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .changelog-entry .date {
+            display: block;
+            color: #73ffd4;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        .changelog-entry ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .changelog-entry ul li {
+            background: #031616;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-left: 5px solid #0fffc1;
+            border-radius: 5px;
+            font-size: 1.05rem;
         }
 
         /* --- WOTD Section --- */
@@ -309,6 +342,7 @@
         <div class="nav-link active" onclick="showContent('home', this)">Home</div>
         <div class="nav-link" onclick="showContent('hosts', this)">Hosts Setup</div>
         <div class="nav-link" onclick="showContent('wotd', this)">WOTD</div>
+        <div class="nav-link" onclick="showContent('changelogs', this)">Changelogs</div>
     </nav>
 
     <section id="home" class="content-section active">
@@ -429,6 +463,45 @@ https://pastebin.com/raw/4q40mEbP
         </div>
     </section>
 
+    <section id="changelogs" class="content-section">
+        <h2>SOLUNA CHANGELOGS ⚙️</h2>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px; opacity: 0.9;">Keep up with all the latest features, fixes, and improvements!</p>
+
+        <div class="changelog-entry">
+            <h3>CHANGELOGS v1.2</h3>
+            <span class="date">Released: September 20, 2025</span>
+            <ul>
+                <li>Ringmaster Fixed.</li>
+                <li>New Locks added.</li>
+                <li>New Website.</li>
+                <li>Over 200+ Custom Items Added.</li>
+            </ul>
+        </div>
+
+        <div class="changelog-entry">
+            <h3>CHANGELOGS v1.1</h3>
+            <span class="date">Released: September 8, 2025</span>
+            <ul>
+                <li>New Login Screen</li>
+                <li>New commands, see in-game "/?".</li>
+                <li>New Visa Card Item and other items</li>
+                <li>New Social System Buttons and Many More!</li>
+            </ul>
+        </div>
+
+        <div class="changelog-entry">
+            <h3>CHANGELOGS v1.0</h3>
+            <span class="date">Released: August 14, 2025</span>
+            <ul>
+                <li>? BLOCK Gem Drop Rate Fixed.</li>
+                <li>in-game /link command fixed.</li>
+                <li>New lock convert menu .</li>
+                <li>More discord bot commands</li>
+            </ul>
+        </div>
+
+        </section>
+
     <footer>
         <p>&copy; 2025 Soluna GTPS. All rights reserved.</p>
         <p>We are not affiliated with Growtopia or Ubisoft in any way. Images are placeholders.</p>
@@ -446,7 +519,7 @@ https://pastebin.com/raw/4q40mEbP
             });
         }
 
-        // Function to show the main content sections (Home, Hosts, WOTD)
+        // Function to show the main content sections (Home, Hosts, WOTD, Changelogs)
         function showContent(id, clickedElement) {
             // Hide all main content sections
             document.querySelectorAll(".content-section").forEach(sec => sec.classList.remove("active"));
@@ -465,7 +538,7 @@ https://pastebin.com/raw/4q40mEbP
                 clickedElement.classList.add("active");
             }
             
-            // FIX: Ensure a platform tab is selected on the Hosts page
+            // FIX: Ensure a platform tab is selected on the Hosts page when navigating to it
             if (id === 'hosts') {
                 const iosButton = document.getElementById('ios-btn');
                 if (iosButton) {
