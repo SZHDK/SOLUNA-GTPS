@@ -25,6 +25,27 @@
             text-shadow: 0 0 10px #0fffc1;
         }
 
+        /* --- Custom Glow Colors --- */
+        /* Neon Yellow/Gold Glow for PWL prize */
+        .yellow-glow {
+            color: #ffff00; /* Bright Yellow */
+            text-shadow: 0 0 10px #ffff00, 0 0 20px #ffcc00;
+        }
+
+        /* Neon Orange Glow for @Agent username */
+        .orange-glow {
+            color: #ff9900; /* Bright Orange */
+            text-shadow: 0 0 10px #ff9900, 0 0 20px #ff6600;
+        }
+
+        /* Neon Cyan Glow (reusing the main theme color) */
+        .cyan-glow {
+            color: #0fffc1; /* Neon Aqua/Cyan */
+            text-shadow: 0 0 10px #0fffc1, 0 0 20px #00ffbf;
+        }
+        /* -------------------------- */
+
+
         /* === Navigation Bar === */
         nav {
             background: #031616;
@@ -220,13 +241,21 @@
             border: 3px solid #0fffc1;
         }
         .wotd-entry h3 {
-            color: #73ffd4;
-            font-size: 1.6rem;
             margin: 0 0 5px 0;
+            color: #73ffd4; 
+            text-shadow: 0 0 10px #0fffc1;
+            font-size: 1.6rem;
         }
         .wotd-entry p {
             font-size: 0.9rem;
             opacity: 0.7;
+        }
+         /* Override WOTD text opacity to ensure glows are visible */
+        .wotd-entry p span.yellow-glow,
+        .wotd-entry p span.orange-glow,
+        .wotd-entry p span.cyan-glow {
+            opacity: 1; 
+            font-weight: bold; /* Make the glowing text stand out */
         }
 
         /* === Footer === */
@@ -374,25 +403,28 @@ https://pastebin.com/raw/4q40mEbP
     <section id="wotd" class="content-section">
         <h2>WORLD OF THE DAY 🏆</h2>
         <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px; opacity: 0.9;">Check out the latest and greatest World of the Day winners!</p>
-        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px; opacity: 0.9;">RECIEVE 500PWL FOR EACH WORLD OF YOURS ADDED TO THIS LIST!</p>
+        
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px; opacity: 0.9;">
+            <span class="yellow-glow">RECIEVE 500PWL</span> FOR EACH WORLD OF YOURS ADDED TO THIS LIST!
+        </p>
 
         <div class="wotd-gallery">
             <div class="wotd-entry">
                 <img src="https://cdn.discordapp.com/attachments/1416888838961238107/1416888850911068321/image.png?ex=68d653d2&is=68d50252&hm=c5dbe98d33b317688eb13b5d9695e5f899139c611e8ec7dee26d5396b058d3e4&" alt="WOTD: DRAGON">
                 <h3>DRAGON</h3>
-                <p>Made By: @Agent</p>
+                <p>Made By: <span class="orange-glow">@Agent</span></p>
             </div>
 
             <div class="wotd-entry">
                 <img src="https://cdn.discordapp.com/attachments/1416888838961238107/1420290464346804337/image.png?ex=68d62d92&is=68d4dc12&hm=026fb8653f42616634a9d859a0aed0bbb4624751b1439db43be7a2557db79f4f&" alt="WOTD: COOLBEAR">
                 <h3>COOLBEAR</h3>
-                <p>Made By: @Agent</p>
+                <p>Made By: <span class="orange-glow">@Agent</span></p>
             </div>
 
             <div class="wotd-entry">
                 <img src="https://cdn.discordapp.com/attachments/1416888838961238107/1420091276853772288/image.png?ex=68d61cd0&is=68d4cb50&hm=bfb73f1f73ec0fe8805cde7a09680eb4f3b6486ee579adeced69323a36d68638&" alt="WOTD: ART">
                 <h3>ART</h3>
-                <p>Made By: @SOLUNA</p>
+                <p>Made By: <span class="cyan-glow">@SOLUNA</span></p>
             </div>
         </div>
     </section>
@@ -469,5 +501,3 @@ https://pastebin.com/raw/4q40mEbP
 
 </body>
 </html>
-
-
