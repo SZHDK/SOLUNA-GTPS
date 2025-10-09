@@ -26,3 +26,19 @@
     color: #ff6600;
     text-shadow: 0 0 12px #ff6600, 0 0 25px #ff3300, 0 0 40px #ff0000;
 }
+.eternal-text {
+    background: linear-gradient(270deg, #ff00ff, #00ffff, #ffcc00, #ff00ff);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.6rem;
+    font-weight: bold;
+    animation: moveGradient 6s ease infinite;
+}
+
+@keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
